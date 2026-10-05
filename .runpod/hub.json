@@ -1,0 +1,36 @@
+{
+  "title": "RunPod Pathumma STT",
+  "description": "Thai speech-to-text using NECTEC Pathumma Whisper Thai Large v3 on a CUDA GPU. Accepts base64-encoded audio and returns transcription text and processing timings.",
+  "type": "serverless",
+  "category": "audio",
+  "config": {
+    "runsOn": "GPU",
+    "containerDiskInGb": 30,
+    "gpuCount": 1,
+    "gpuIds": "ADA_24",
+    "presets": [
+      {
+        "name": "Default — Pathumma Thai STT",
+        "defaults": {
+          "HF_HOME": "/app/model-cache"
+        }
+      }
+    ],
+    "env": [
+      {
+        "key": "PYTHONUNBUFFERED",
+        "value": "1"
+      },
+      {
+        "key": "HF_HOME",
+        "input": {
+          "name": "Hugging Face cache directory",
+          "type": "string",
+          "description": "Model cache path. Use /runpod-volume/hf-cache only when a network volume is attached.",
+          "default": "/app/model-cache",
+          "advanced": true
+        }
+      }
+    ]
+  }
+}
