@@ -1,5 +1,7 @@
 # RunPod · Pathumma Whisper Thai Large v3
 
+[![Runpod](https://api.runpod.io/badge/snpeerapun/runpod-pathumma-stt)](https://console.runpod.io/hub/listing/snpeerapun/runpod-pathumma-stt)
+
 ชุดทดสอบสำหรับ **RunPod Serverless แบบ Queue** ใช้โมเดล `nectec/Pathumma-whisper-th-large-v3` ผ่าน Transformers บน CUDA GPU ไม่ใช่ MLX ของ Mac และเป็น worker แยกสำหรับ STT โดยเฉพาะ
 
 มี 2 ส่วน:
