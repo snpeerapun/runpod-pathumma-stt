@@ -123,3 +123,11 @@ PYTHONDONTWRITEBYTECODE=1 python3 -m unittest discover -s . -p 'test_handler.py'
 - [NECTEC model card](https://huggingface.co/nectec/Pathumma-whisper-th-large-v3)
 - [RunPod request lifecycle](https://docs.runpod.io/serverless/endpoints/send-requests)
 - [Deploy a Docker worker](https://docs.runpod.io/serverless/workers/deploy)
+
+## RunPod Hub smoke test
+
+`.runpod/tests.json` embeds a mono 16 kHz WAV as `audio_base64` with language `th`. The fixture is synthetic Thai speech generated locally with macOS Kanya (a greeting followed by a question about today's weather). It contains no user recordings and requires no external fixture download.
+
+The test uses one RTX 4090 and CUDA 12.8 to match the Docker base image, with a 600,000 ms timeout for initial model download/loading. This is a pipeline smoke test, not an accuracy benchmark or an exact-transcript assertion.
+
+The JSON, WAV and worker input validation have been checked locally. The Hub GPU test has not been run yet. Create a GitHub Release when ready for RunPod Hub to build/test the release.
