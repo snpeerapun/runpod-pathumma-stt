@@ -74,9 +74,9 @@ async function main() {
   } });
   if (values.help) {
     console.log(`Usage (Node.js 22+):
-  node tools/runpod-pathumma/test-call.mjs --audio ./sample.wav [--endpoint ID]
-  node tools/runpod-pathumma/test-call.mjs --audio ./sample.wav --dry-run
-  node tools/runpod-pathumma/test-call.mjs --job JOB_ID [--endpoint ID]
+  node test-call.mjs --audio ./sample.wav [--endpoint ID]
+  node test-call.mjs --audio ./sample.wav --dry-run
+  node test-call.mjs --job JOB_ID [--endpoint ID]
 Environment: RUNPOD_API_KEY, RUNPOD_ENDPOINT_ID
 Options: --language th|en, --timeout 600, --interval 2 (seconds)
 Input schema: {input:{audio_base64,language}}; requires the matching worker.
